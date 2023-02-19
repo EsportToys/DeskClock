@@ -16,6 +16,10 @@ Global Const $DEFAULT_BASE_OPACITY = IniRead($iniPath,'Options','BaseOpacity',12
 Global Const $CLOCK_HRS_COLOR = IniRead($iniPath,'Options','HoursColor',$DEFAULT_CLOCK_COLOR)
 Global Const $CLOCK_MIN_COLOR = IniRead($iniPath,'Options','MinutesColor',$DEFAULT_CLOCK_COLOR)
 Global Const $CLOCK_SEC_COLOR = IniRead($iniPath,'Options','SecondsColor',$DEFAULT_CLOCK_COLOR)
+Global $HOURS_OFFSET = 0
+If $CmdLine[0]>0 Then
+   If $CmdLine[1]<>0 Then $HOURS_OFFSET = Round($CmdLine[1])
+EndIf
 
 
 Opt('GUIOnEventMode',1)
@@ -134,7 +138,7 @@ EndFunc
 Func DrawHands($target)
      Local $angSec = 6*@SEC
      Local $angMin = 6*@MIN + $angSec/60
-     Local $angHrs = 30*Mod( @HOUR , 12 ) + $angMin/12
+     Local $angHrs = 30*Mod( @HOUR+$HOURS_OFFSET , 12 ) + $angMin/12
      $lastSecAng = $angSec
      Local $frontIndex = $hFront
      Local $backIndex = not $frontIndex
@@ -143,12 +147,12 @@ Func DrawHands($target)
      GUICtrlSetState($new,32)
      GUICtrlSetGraphic($new, 6, 0, 0)
      GUICtrlSetGraphic($new,24, 3)
-     GUICtrlSetGraphic($new, 8, $CLOCK_HRS_COLOR)
-     GUICtrlSetGraphic($new, 2, $CLOCK_HRS_RADIUS*sin(Rad($angHrs)), -$CLOCK_HRS_RADIUS*cos(Rad($angHrs)))
-     GUICtrlSetGraphic($new, 6, 0, 0)
-     GUICtrlSetGraphic($new,24, 3)
      GUICtrlSetGraphic($new, 8, $CLOCK_MIN_COLOR)
      GUICtrlSetGraphic($new, 2, $CLOCK_MIN_RADIUS*sin(Rad($angMin)), -$CLOCK_MIN_RADIUS*cos(Rad($angMin)))
+     GUICtrlSetGraphic($new, 6, 0, 0)
+     GUICtrlSetGraphic($new,24, 3)
+     GUICtrlSetGraphic($new, 8, $CLOCK_HRS_COLOR)
+     GUICtrlSetGraphic($new, 2, $CLOCK_HRS_RADIUS*sin(Rad($angHrs)), -$CLOCK_HRS_RADIUS*cos(Rad($angHrs)))
      GUICtrlSetGraphic($new, 6, 0, 0)
      GUICtrlSetGraphic($new,24, 1)
      GUICtrlSetGraphic($new, 8, $CLOCK_SEC_COLOR)
