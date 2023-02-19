@@ -2,7 +2,7 @@
 A simple analog clock written in AutoIt
 
 
-<img src="https://user-images.githubusercontent.com/98432183/219945108-5b8618d2-275e-4255-8a70-c07e54b65c51.png" width="25%">
+<img src="https://user-images.githubusercontent.com/98432183/219956795-8354ca84-5b1b-494c-b6cf-02175b245a9f.png" width="25%">
 
 ## Features
 * Literally just a clock
