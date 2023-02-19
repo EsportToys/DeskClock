@@ -1,7 +1,6 @@
 # DeskClock
 A simple analog clock written in AutoIt
 
-
 ![image](https://user-images.githubusercontent.com/98432183/219956795-8354ca84-5b1b-494c-b6cf-02175b245a9f.png)
 
 ## Features
@@ -9,7 +8,8 @@ A simple analog clock written in AutoIt
 * Draggable and always on top, but does not steal window focus.
 * Tray icon to toggle visibility. No extra icon in taskbar.
 
-![image](https://user-images.githubusercontent.com/98432183/219945524-21d23f01-60fe-4c1e-bae6-d1cc7d1dafac.png)
+![image](https://user-images.githubusercontent.com/98432183/219958822-c20fc95a-bb28-4036-bbb4-46c30e39963c.png)
+
 
 ## Configuration
 Edit the `options.ini` file located at the script's working directory.
