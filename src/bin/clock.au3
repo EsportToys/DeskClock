@@ -115,14 +115,14 @@ EndFunc
 
 Func DrawTicks($target,$color)
      GUISwitch($target)
-     Local $h = GUICtrlCreateGraphic($winWidth/2,$winHeight/2,0,0)
+     Local $h = GUICtrlCreateGraphic($winWidth/2,$winHeight/2,0,0), $R = Round
      GUICtrlSetState($h,32)
      For $i=0 to 59
          Local $inner = Mod($i,5)?$CLOCK_INNER_RADIUS_60:$CLOCK_INNER_RADIUS_12, $outer = $CLOCK_RADIUS+1
          GUICtrlSetGraphic($h,24, 1)
          GUICtrlSetGraphic($h, 8, $color)
-         GUICtrlSetGraphic($h, 6, $inner*sin(Rad($i*6)), -$inner*cos(Rad($i*6)))
-         GUICtrlSetGraphic($h, 2, $outer*sin(Rad($i*6)), -$outer*cos(Rad($i*6)))
+         GUICtrlSetGraphic($h, 6, $R($inner*sin(Rad($i*6))), -$R($inner*cos(Rad($i*6))))
+         GUICtrlSetGraphic($h, 2, $R($outer*sin(Rad($i*6))), -$R($outer*cos(Rad($i*6))))
      Next
      GUICtrlSetGraphic($h, 8, $clockColor, $clockColor)
      GUICtrlSetGraphic($h,12,-$CLOCK_HUB_RADIUS,-$CLOCK_HUB_RADIUS,$CLOCK_HUB_RADIUS*2+1,$CLOCK_HUB_RADIUS*2+1)
@@ -143,20 +143,20 @@ Func DrawHands($target)
      Local $frontIndex = $hFront
      Local $backIndex = not $frontIndex
      GUISwitch($target)
-     Local $new = GUICtrlCreateGraphic($winWidth/2,$winHeight/2,0,0)
+     Local $new = GUICtrlCreateGraphic($winWidth/2,$winHeight/2,0,0), $R = Round
      GUICtrlSetState($new,32)
      GUICtrlSetGraphic($new, 6, 0, 0)
      GUICtrlSetGraphic($new,24, 3)
      GUICtrlSetGraphic($new, 8, $CLOCK_MIN_COLOR)
-     GUICtrlSetGraphic($new, 2, $CLOCK_MIN_RADIUS*sin(Rad($angMin)), -$CLOCK_MIN_RADIUS*cos(Rad($angMin)))
+     GUICtrlSetGraphic($new, 2, $R($CLOCK_MIN_RADIUS*sin(Rad($angMin))), -$R($CLOCK_MIN_RADIUS*cos(Rad($angMin))))
      GUICtrlSetGraphic($new, 6, 0, 0)
      GUICtrlSetGraphic($new,24, 3)
      GUICtrlSetGraphic($new, 8, $CLOCK_HRS_COLOR)
-     GUICtrlSetGraphic($new, 2, $CLOCK_HRS_RADIUS*sin(Rad($angHrs)), -$CLOCK_HRS_RADIUS*cos(Rad($angHrs)))
+     GUICtrlSetGraphic($new, 2, $R($CLOCK_HRS_RADIUS*sin(Rad($angHrs))), -$R($CLOCK_HRS_RADIUS*cos(Rad($angHrs))))
      GUICtrlSetGraphic($new, 6, 0, 0)
      GUICtrlSetGraphic($new,24, 1)
      GUICtrlSetGraphic($new, 8, $CLOCK_SEC_COLOR)
-     GUICtrlSetGraphic($new, 2, $CLOCK_SEC_RADIUS*sin(Rad($angSec)), -$CLOCK_SEC_RADIUS*cos(Rad($angSec)))
+     GUICtrlSetGraphic($new, 2, $R($CLOCK_SEC_RADIUS*sin(Rad($angSec))), -$R($CLOCK_SEC_RADIUS*cos(Rad($angSec))))
      GUICtrlDelete($hBuffer[$backIndex])
      $hBuffer[$backIndex] = $new
      GUICtrlSetState($hBuffer[$backIndex],16)
