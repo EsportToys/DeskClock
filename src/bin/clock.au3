@@ -30,6 +30,7 @@ TraySetOnEvent(-8,ToggleVisible)
 TrayItemSetOnEvent(TrayCreateItem('Reset'),ResetPosition)
 TrayItemSetOnEvent(TrayCreateItem('Quit'),Quit)
 TraySetIcon('shell32.dll',16771)
+TraySetToolTip('Offset: ' & $HOURS_OFFSET)
 
 Global $isDragging = False
 
