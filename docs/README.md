@@ -44,4 +44,4 @@ will launch the clock with a negative three hour offset from the system hour.
 
 You can set the flag as a shortcut to the .vbs stub itself:
 
-![image](https://github.com/EsportToys/DeskClock/assets/98432183/05da02f6-5cb7-419f-acd9-ead82e14ef91)
+![image](https://github.com/EsportToys/DeskClock/assets/98432183/bcb2fd55-5806-416c-a217-979a091f30df)
