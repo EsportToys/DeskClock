@@ -1,7 +1,7 @@
 # DeskClock
 A simple analog clock written in AutoIt
 
-![image](https://user-images.githubusercontent.com/98432183/219956795-8354ca84-5b1b-494c-b6cf-02175b245a9f.png)
+![image](https://github.com/EsportToys/DeskClock/assets/98432183/e04adf43-0d30-417c-9edc-a18229639d99)
 
 ## Features
 * Literally just a clock
@@ -9,7 +9,6 @@ A simple analog clock written in AutoIt
 * Tray icon to toggle visibility. No extra icon in taskbar.
 
 ![image](https://user-images.githubusercontent.com/98432183/219958822-c20fc95a-bb28-4036-bbb4-46c30e39963c.png)
-
 
 ## Configuration
 Edit the `options.ini` file located at the script's working directory.
@@ -31,3 +30,15 @@ HoursColor=0xffff00
 MinutesColor=0x00ffff
 SecondsColor=0xff00ff
 ```
+
+## Command Line
+
+You can change the hours offset from your system time by launching with the desired value as a flag.
+
+For example:
+
+```
+<regular command to launch DeskClock> -3
+```
+
+will launch the clock with a negative three hour offset from the system hour.
