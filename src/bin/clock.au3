@@ -29,11 +29,16 @@ TraySetClick(16)
 TraySetOnEvent(-8,ToggleVisible)
 TrayItemSetOnEvent(TrayCreateItem('Reset'),ResetPosition)
 TrayItemSetOnEvent(TrayCreateItem('Quit'),Quit)
+TraySetIcon('shell32.dll',16771)
 
 Global $isDragging = False
 
 
 Global $hSysTray = WinGetHandle('[Class:Shell_TrayWnd]')
+While @error
+ Sleep(1000)
+ $hSysTray = WinGetHandle('[Class:Shell_TrayWnd]')
+WEnd
 Global $clockColor = $DEFAULT_CLOCK_COLOR, $baseColor = $DEFAULT_BASE_COLOR
 Global $winWidth = $CLOCK_WIDTH, $winHeight = $CLOCK_WIDTH
 Global $winPos = CalculateWinPos($winWidth,$winHeight,WinGetPos($hSysTray))
