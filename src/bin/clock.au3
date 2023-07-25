@@ -2,20 +2,20 @@
 
 Global Const $iniPath = 'options.ini'
 Global Const $user32 = DllOpen('user32.dll')
-Global Const $CLOCK_RADIUS = IniRead($iniPath,'Options','ClockRadius',120)
+Global Const $CLOCK_RADIUS = IniRead($iniPath,'Options','ClockRadius',60)
 Global Const $CLOCK_WIDTH = $CLOCK_RADIUS*2 + 1
-Global Const $CLOCK_HRS_RADIUS = IniRead($iniPath,'Options','HoursRadius',50)
-Global Const $CLOCK_MIN_RADIUS = IniRead($iniPath,'Options','MinutesRadius',95)
-Global Const $CLOCK_SEC_RADIUS = IniRead($iniPath,'Options','SecondsRadius',100)
-Global Const $CLOCK_INNER_RADIUS_60 = IniRead($iniPath,'Options','InnerRadius60',110)
-Global Const $CLOCK_INNER_RADIUS_12 = IniRead($iniPath,'Options','InnerRadius12',100)
-Global Const $CLOCK_HUB_RADIUS = IniRead($iniPath,'Options','HubRadius',5)
+Global Const $CLOCK_HRS_RADIUS = IniRead($iniPath,'Options','HoursRadius',25)
+Global Const $CLOCK_MIN_RADIUS = IniRead($iniPath,'Options','MinutesRadius',42)
+Global Const $CLOCK_SEC_RADIUS = IniRead($iniPath,'Options','SecondsRadius',50)
+Global Const $CLOCK_INNER_RADIUS_60 = IniRead($iniPath,'Options','InnerRadius60',57)
+Global Const $CLOCK_INNER_RADIUS_12 = IniRead($iniPath,'Options','InnerRadius12',45)
+Global Const $CLOCK_HUB_RADIUS = IniRead($iniPath,'Options','HubRadius',2)
 Global Const $DEFAULT_CLOCK_COLOR = IniRead($iniPath,'Options','ClockColor',0xffffff)
 Global Const $DEFAULT_BASE_COLOR = IniRead($iniPath,'Options','BaseColor',0x000000)
-Global Const $DEFAULT_BASE_OPACITY = IniRead($iniPath,'Options','BaseOpacity',128)
-Global Const $CLOCK_HRS_COLOR = IniRead($iniPath,'Options','HoursColor',$DEFAULT_CLOCK_COLOR)
-Global Const $CLOCK_MIN_COLOR = IniRead($iniPath,'Options','MinutesColor',$DEFAULT_CLOCK_COLOR)
-Global Const $CLOCK_SEC_COLOR = IniRead($iniPath,'Options','SecondsColor',$DEFAULT_CLOCK_COLOR)
+Global Const $DEFAULT_BASE_OPACITY = IniRead($iniPath,'Options','BaseOpacity',192)
+Global Const $CLOCK_HRS_COLOR = IniRead($iniPath,'Options','HoursColor',0xffff00)
+Global Const $CLOCK_MIN_COLOR = IniRead($iniPath,'Options','MinutesColor',0x00ffff)
+Global Const $CLOCK_SEC_COLOR = IniRead($iniPath,'Options','SecondsColor',0xff00ff)
 Global $HOURS_OFFSET = 0
 If $CmdLine[0]>0 Then
    If $CmdLine[1]<>0 Then $HOURS_OFFSET = Round($CmdLine[1])
