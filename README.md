@@ -7,8 +7,7 @@ A simple analog clock written in AutoIt
 * Literally just a clock
 * Draggable and always on top, but does not steal window focus.
 * Tray icon to toggle visibility. No extra icon in taskbar.
-
-![image](https://user-images.githubusercontent.com/98432183/219958822-c20fc95a-bb28-4036-bbb4-46c30e39963c.png)
+* Customization via .ini, timezone offset via cmdline flag
 
 ## Configuration
 Edit the `options.ini` file located at the script's working directory.
