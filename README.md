@@ -41,3 +41,7 @@ For example:
 ```
 
 will launch the clock with a negative three hour offset from the system hour.
+
+You can set the flag as a shortcut to the .vbs stub itself:
+
+![image](https://github.com/EsportToys/DeskClock/assets/98432183/975a48a7-6887-47c8-adf3-d199a5aee357)
